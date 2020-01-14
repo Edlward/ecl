@@ -549,6 +549,11 @@ protected:
 	uint8_t _baro_sample_count {0};		// number of barometric altitude measurements summed
 	uint64_t _baro_timestamp_sum {0};	// summed timestamp to provide the timestamp of the averaged sample
 
+	// Used to downsample magnetometer data
+	Vector3f _mag_data_sum;
+	uint8_t _mag_sample_count {0};
+	uint64_t _mag_timestamp_sum {0};
+
 	fault_status_u _fault_status{};
 
 	// allocate data buffers and initialize interface variables
